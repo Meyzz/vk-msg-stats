@@ -5,7 +5,7 @@ export const loadChatsExecute = (options: object = {}) => `
     
     var histories = [];
     
-    while (index < chats.items.length - 1) {
+    while (index < chats.items.length) {
         var peerId = chats.items[index].conversation.peer.id;
         var history = API.messages.getHistory({"count": 1, "peer_id": peerId});
         histories.push({count: history.count, id: peerId });

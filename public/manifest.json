@@ -6,7 +6,7 @@
   "manifest_version": 2,
   "browser_action": {},
   "permissions": [
-    "tabs", "*://api.vk.com/*"
+    "tabs", "*://api.vk.com/*", "unlimitedStorage"
   ],
   "background": {
     "scripts": [

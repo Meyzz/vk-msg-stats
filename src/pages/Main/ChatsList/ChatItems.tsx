@@ -1,18 +1,35 @@
 import { FormattedChat } from 'pages/Main/types';
-import {Avatar, FlexboxGrid, List, Tag} from 'rsuite';
+import { Avatar, FlexboxGrid, List, Tag, Notification } from 'rsuite';
 import style from './ChatsList.module.scss';
-import React from 'react';
+import React, { FC } from 'react';
 
-export const Chat = ({ chat }: { chat: FormattedChat }) => {
+interface ChatProps {
+  chat: FormattedChat;
+  onClick: (id: number) => void;
+}
+
+export const Chat: FC<ChatProps> = ({ chat, onClick }) => {
+  const handleChatClick = () => {
+    if (chat.type !== 'user') {
+      Notification.error({
+        title: 'Произошла ошибка',
+        description: 'На текущий момент поддерживается только анализ диалогов',
+        placement: 'bottomEnd'
+      });
+    } else {
+      onClick(chat.id);
+    }
+  };
+
   return (
-    <List.Item>
+    <List.Item className={style.itemContainer} onClick={handleChatClick}>
       <FlexboxGrid align="middle" justify="space-between">
         <div className={style.title}>
           <Avatar circle src={chat.photo_50} />
           <div>{chat.title}</div>
         </div>
         <div>
-            <Tag color="red">{chat.count}</Tag>
+          <Tag color="red">{chat.count}</Tag>
         </div>
       </FlexboxGrid>
     </List.Item>

@@ -4,7 +4,6 @@ import { HashRouter, BrowserRouter } from 'react-router-dom';
 import 'rsuite/dist/styles/rsuite-default.css';
 import reportWebVitals from './reportWebVitals';
 import { Routes } from 'router';
-import { RootStoreProvider } from 'hooks/useRootStore';
 import ruRU from 'rsuite/lib/IntlProvider/locales/ru_RU';
 
 import 'index.scss';
@@ -12,15 +11,13 @@ import { IntlProvider } from 'rsuite';
 
 ReactDOM.render(
   <React.StrictMode>
-    <RootStoreProvider>
-      <IntlProvider locale={ruRU}>
-        <BrowserRouter basename="/index.html">
-          <HashRouter>
-            <Routes />
-          </HashRouter>
-        </BrowserRouter>
-      </IntlProvider>
-    </RootStoreProvider>
+    <IntlProvider locale={ruRU}>
+      <BrowserRouter basename="/index.html">
+        <HashRouter>
+          <Routes />
+        </HashRouter>
+      </BrowserRouter>
+    </IntlProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

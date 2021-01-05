@@ -1,13 +1,10 @@
+import {ProfileInfo} from "stores/types";
+
 export interface GetChatsResponse {
   chats: {
     count: number;
     items: Chat[];
-    profiles: Array<{
-      first_name: string;
-      last_name: string;
-      photo_50: string;
-      id: number;
-    }>;
+    profiles: ProfileInfo[];
     groups?: Array<{ id: number; name: string; photo_50: string }>;
   };
   histories: Array<{

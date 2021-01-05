@@ -1,15 +1,16 @@
+import React from 'react';
+import { ChatsStore } from 'stores/ChatsStore';
+import { DialogStore } from 'stores/DialogStore';
 import { UserStore } from 'stores/UserStore';
-import {ChatsStore} from "stores/ChatsStore";
 
-export class RootStore {
-  public userStore: UserStore;
-  public chatsStore: ChatsStore;
-
-  constructor() {
-    this.userStore = new UserStore(this);
-    this.chatsStore = new ChatsStore(this);
-
-    this.userStore.init();
-    this.chatsStore.init();
-  }
+export interface Stores {
+  chatsStore: ChatsStore;
+  dialogStore: DialogStore;
+  userStore: UserStore;
 }
+
+export const storesContext = React.createContext({
+  chatsStore: new ChatsStore(),
+  dialogStore: new DialogStore(),
+  userStore: new UserStore(),
+});

@@ -5,13 +5,14 @@ import { Chat } from 'pages/Main/ChatsList/ChatItems';
 
 interface ChatsList {
   chats: FormattedChat[];
+  onChatClick: (id: number) => void;
 }
 
-export const ChatsList: FC<ChatsList> = ({ chats }) => {
+export const ChatsList: FC<ChatsList> = ({ chats, onChatClick }) => {
   return (
-    <List hover>
+    <List hover bordered>
       {chats.map((chat) => {
-        return <Chat chat={chat} key={chat.id} />;
+        return <Chat onClick={onChatClick} chat={chat} key={chat.id} />;
       })}
     </List>
   );

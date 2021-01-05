@@ -2,14 +2,15 @@ import React, { FC, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { PATHS } from 'router/paths';
 import { MainPage } from 'pages/Main';
-import { useRootStore } from 'hooks/useRootStore';
+import { useStores } from 'hooks/useStores';
 import { observer } from 'mobx-react';
 import { Loader } from 'rsuite';
+import { DialogPage } from 'pages/Dialog';
 
 export const Routes: FC = observer(() => {
   const {
     userStore: { accountGetProfileInfo, getUserData },
-  } = useRootStore();
+  } = useStores();
 
   useEffect(() => {
     if (!accountGetProfileInfo.fetchCalled) {
@@ -29,7 +30,10 @@ export const Routes: FC = observer(() => {
 
   return (
     <Switch>
-      <Route path={PATHS.INDEX}>
+      <Route exact path={`/${PATHS.DIALOG}/:id`}>
+        <DialogPage />
+      </Route>
+      <Route path="*">
         <MainPage />
       </Route>
     </Switch>

@@ -27,7 +27,7 @@ export class VKRequest<T = any> {
     makeAutoObservable(this);
   }
 
-  public async fetch(options?: object) {
+  public async fetch(options?: object): Promise<T | undefined> {
     const axiosRequest =
       this.method === 'get' ? axiosClient.get : axiosClient.post;
 
@@ -61,11 +61,19 @@ export class VKRequest<T = any> {
         throw new Error(data.error.error_msg);
       }
       this.setData(data.response);
+      return data.response;
     } catch (e) {
       this.setError(e);
     } finally {
       this.setLoading(false);
     }
+  }
+
+  public reset() {
+    this.fetchCalled = false;
+    this.data = null;
+    this.error = null;
+    this.loading = false;
   }
 
   private setFetchCalled() {
@@ -82,6 +90,7 @@ export class VKRequest<T = any> {
       Notification.error({
         title: `Произошлка ошибка (${this.path})`,
         description: error.message,
+        placement: 'bottomEnd'
       });
     }
   }

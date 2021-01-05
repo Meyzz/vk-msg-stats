@@ -13,29 +13,38 @@ const options = {
   response_type: NEEDED_RESPONSE_TYPE,
 };
 
+let authActive = false;
+
 export const auth = () => {
-  localStorage.removeItem('token');
-  const url = AUTH_BASE_LINK;
-  const params = new URLSearchParams();
-  Object.entries(options).forEach(([key, value]) => params.set(key, value));
-  chrome.tabs.getCurrent((activeTab) => {
-    if (activeTab && activeTab.id) {
-      chrome.tabs.create({ url: `${url}?${params}` }, (newTab) => {
-        chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-          if (tabId === newTab.id && changeInfo.url) {
-            // добавить сюда проверку что есть accessToken
-            const url = new URL(changeInfo.url);
-            const params = new URLSearchParams(url.hash.replace('#', ''));
-            const token = params.get('access_token');
-            if (token) {
-              localStorage.setItem('token', token);
-              chrome.tabs.reload(activeTab.id as number, {});
-              chrome.tabs.update(activeTab.id as number, { highlighted: true });
-              chrome.tabs.remove(tabId);
+  if (!authActive) {
+    authActive = true;
+    localStorage.removeItem('token');
+    const url = AUTH_BASE_LINK;
+    const params = new URLSearchParams();
+    Object.entries(options).forEach(([key, value]) => params.set(key, value));
+    debugger;
+    chrome.tabs.getCurrent((activeTab) => {
+      if (activeTab && activeTab.id) {
+        chrome.tabs.create({ url: `${url}?${params}` }, (newTab) => {
+          chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+            if (tabId === newTab.id && changeInfo.url) {
+              // добавить сюда проверку что есть accessToken
+              const url = new URL(changeInfo.url);
+              const params = new URLSearchParams(url.hash.replace('#', ''));
+              const token = params.get('access_token');
+              if (token) {
+                localStorage.setItem('token', token);
+                chrome.tabs.reload(activeTab.id as number, {});
+                chrome.tabs.update(activeTab.id as number, {
+                  highlighted: true,
+                });
+                chrome.tabs.remove(tabId);
+                authActive = false;
+              }
             }
-          }
+          });
         });
-      });
-    }
-  });
+      }
+    });
+  }
 };

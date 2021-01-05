@@ -1,13 +1,13 @@
 import React, { FC, useEffect } from 'react';
 import { Avatar, Nav, Navbar } from 'rsuite';
 import style from 'components/Header/Header.module.scss';
-import { useRootStore } from 'hooks/useRootStore';
+import { useStores } from 'hooks/useStores';
 import { observer } from 'mobx-react';
 
 export const Header: FC = observer(() => {
   const {
     userStore: { accountGetProfileInfo, getUserData},
-  } = useRootStore();
+  } = useStores();
 
     return (
     <Navbar className={style.header}>

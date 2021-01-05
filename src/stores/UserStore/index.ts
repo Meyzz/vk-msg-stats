@@ -1,16 +1,8 @@
-import { makeAutoObservable, observable } from 'mobx';
-import { RootStore } from 'stores/index';
-import { BasicStore } from 'system/BasicStore';
+import { observable } from 'mobx';
 import { VKRequest } from 'classes/VKRequest';
 import { User } from 'stores/UserStore/types';
 
-export class UserStore implements BasicStore {
-  public root: RootStore;
-
-  constructor(root: RootStore) {
-    this.root = root;
-  }
-
+export class UserStore {
   @observable
   public accountGetProfileInfo = new VKRequest<User>(
     'account.getProfileInfo',
@@ -18,10 +10,5 @@ export class UserStore implements BasicStore {
   );
 
   @observable
-  public getUserData = new VKRequest(
-      'users.get',
-      'get'
-  );
-
-  public init() {}
+  public getUserData = new VKRequest('users.get', 'get');
 }
