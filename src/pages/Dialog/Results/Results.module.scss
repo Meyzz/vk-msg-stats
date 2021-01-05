@@ -1,0 +1,49 @@
+.stats {
+  margin-top: 24px;
+  color: black;
+
+  &Text {
+    font-weight: bold;
+    margin-top: 16px;
+  }
+
+  &Item {
+    text-align: center;
+
+    &:first-child {
+      padding-right: 10px;
+    }
+
+    &:last-child {
+      padding-left: 10px;
+    }
+  }
+
+  &Number {
+    color: #f44336;
+  }
+}
+
+.tabs {
+  margin-bottom: 16px;
+}
+
+.container {
+  &:first-child {
+    padding-right: 10px;
+  }
+
+  &:last-child {
+    padding-left: 10px;
+  }
+}
+
+.innerPanel > div:first-child {
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.chart {
+  margin-top: 20px;
+}

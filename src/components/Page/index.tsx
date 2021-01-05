@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Container, Navbar, Header as HeaderLayout, Content } from 'rsuite';
+import { Container, Header as HeaderLayout, Content } from 'rsuite';
 import { Header } from 'components/Header';
 import style from './Page.module.scss';
 

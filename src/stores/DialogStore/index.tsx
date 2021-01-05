@@ -11,11 +11,14 @@ import { loadHistory } from 'stores/DialogStore/loadHistory';
 const LOAD_TIMES = 25;
 const LOAD_AT_ONCE = 200;
 
-const initialResults = {
+const initialResults: AnalysisResults = {
   checkedCount: 0,
   count: 0,
   fromCount: 0,
   toCount: 0,
+  fromVoice: 0,
+  fullVoice: 0,
+  toVoice: 0,
 };
 
 export class DialogStore {
@@ -91,6 +94,22 @@ export class DialogStore {
                 newResults.toCount = newResults.toCount + 1;
               } else {
                 newResults.fromCount = newResults.fromCount + 1;
+              }
+              if (message.attachments.length) {
+                message.attachments.forEach((attachment) => {
+                  if (attachment.audio_message) {
+                    newResults.fullVoice =
+                      newResults.fullVoice + attachment.audio_message.duration;
+                    if (message.out) {
+                      newResults.toVoice =
+                        newResults.toVoice + attachment.audio_message.duration;
+                    } else {
+                      newResults.fromVoice =
+                        newResults.fromVoice +
+                        attachment.audio_message.duration;
+                    }
+                  }
+                });
               }
             }
           });

@@ -8,12 +8,22 @@ export interface GetDialogInfoResp {
 export interface HistoryMessageResp {
   date: number;
   out: number;
+  attachments: Array<{
+    type: 'audio_message';
+    audio_message?: {
+      duration: number;
+      owner_id: number;
+    }
+  }>;
 }
 
 export interface AnalysisResults {
   fromCount: number;
   toCount: number;
   count: number;
+  fullVoice: number;
+  fromVoice: number;
+  toVoice: number;
   checkedCount: number;
 }
 
@@ -24,5 +34,5 @@ export interface LoadHistoryResp {
 export enum AnalysisState {
   INACTIVE,
   ACTIVE,
-  DONE
+  DONE,
 }
