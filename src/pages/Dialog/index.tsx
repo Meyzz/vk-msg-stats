@@ -57,10 +57,10 @@ export const DialogPage: FC = observer(() => {
   }, [stopAnalysis]);
 
   const analysisProgressPercent = useMemo(() => {
-    return results.count
-      ? Math.floor((results.checkedCount / results.count) * 100)
+    return results.all.count
+      ? Math.floor((results.checkedCount / results.all.count) * 100)
       : 0;
-  }, [results.checkedCount, results.count]);
+  }, [results.checkedCount, results.all.count]);
 
   return (
     <Page>

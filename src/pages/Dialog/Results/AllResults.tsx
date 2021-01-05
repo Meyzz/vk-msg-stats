@@ -2,23 +2,25 @@ import React, { FC } from 'react';
 import { FlexboxGrid, Panel, Progress } from 'rsuite';
 import style from 'pages/Dialog/Results/Results.module.scss';
 import { AnalysisResults } from 'stores/DialogStore/types';
-import {formatNumber} from "utils";
+import { formatNumber } from 'utils';
+import { PanelHeader } from 'pages/Dialog/Results/PanelHeader';
 
 interface AllResultsProps {
   data: AnalysisResults;
 }
 
 export const AllResults: FC<AllResultsProps> = ({ data }) => {
-  const fromPercent = Math.round((data.fromCount / data.count) * 100);
-  const toPercent = Math.round((data.toCount / data.count) * 100);
+  const {count, from, to} = data.all;
+  const fromPercent = Math.round((from / count) * 100);
+  const toPercent = Math.round((to / count) * 100);
   return (
     <FlexboxGrid.Item className={style.container} colspan={12}>
       <Panel
-        header={`Все сообщения (${formatNumber(data.count)})`}
+        header={
+          <PanelHeader disabled title={`Все сообщения (${formatNumber(count)})`} />
+        }
         bordered
         className={style.panel}
-        collapsible
-        defaultExpanded
       >
         <FlexboxGrid>
           <FlexboxGrid.Item className={style.statsItem} colspan={12}>
@@ -27,7 +29,7 @@ export const AllResults: FC<AllResultsProps> = ({ data }) => {
               <Panel
                 className={style.innerPanel}
                 bodyFill
-                header={`Вы отправили ${formatNumber(data.toCount)}`}
+                header={`Отправлено ${formatNumber(to)}`}
               />
             </Panel>
           </FlexboxGrid.Item>
@@ -37,7 +39,7 @@ export const AllResults: FC<AllResultsProps> = ({ data }) => {
               <Panel
                 className={style.innerPanel}
                 bodyFill
-                header={`Вам отправили ${formatNumber(data.fromCount)}`}
+                header={`Получено ${formatNumber(from)}`}
               />
             </Panel>
           </FlexboxGrid.Item>

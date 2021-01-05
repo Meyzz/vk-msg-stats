@@ -13,18 +13,33 @@ export interface HistoryMessageResp {
     audio_message?: {
       duration: number;
       owner_id: number;
-    }
+    };
   }>;
 }
 
 export interface AnalysisResults {
-  fromCount: number;
-  toCount: number;
-  count: number;
-  fullVoice: number;
-  fromVoice: number;
-  toVoice: number;
+  all: {
+    from: number;
+    to: number;
+    count: number;
+  };
+  voice: {
+    count: number;
+    from: number;
+    to: number;
+  };
+  dates: AnalysisDates;
   checkedCount: number;
+}
+
+export interface AnalysisDates {
+  [year: number]: {
+    [month: number]: {
+      count: number;
+      from: number;
+      to: number;
+    };
+  };
 }
 
 export interface LoadHistoryResp {

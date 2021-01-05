@@ -13,12 +13,17 @@ const LOAD_AT_ONCE = 200;
 
 const initialResults: AnalysisResults = {
   checkedCount: 0,
-  count: 0,
-  fromCount: 0,
-  toCount: 0,
-  fromVoice: 0,
-  fullVoice: 0,
-  toVoice: 0,
+  all: {
+    count: 0,
+    from: 0,
+    to: 0,
+  },
+  voice: {
+    from: 0,
+    count: 0,
+    to: 0,
+  },
+  dates: {},
 };
 
 export class DialogStore {
@@ -44,7 +49,7 @@ export class DialogStore {
 
   public startAnalysis = (id: number, count: number) => {
     this.analysisState = AnalysisState.ACTIVE;
-    this.results = { ...initialResults, count };
+    this.results = { ...initialResults, all: { ...initialResults.all, count } };
     const needLoads = Math.ceil(count / (LOAD_AT_ONCE * LOAD_TIMES));
     this.loadPartHistory(id, 0, needLoads);
   };
@@ -89,23 +94,47 @@ export class DialogStore {
         if (messagesArr) {
           messagesArr.forEach((message) => {
             if (message) {
+              // dates
+              const date = new Date(message.date * 1000);
+              const year = date.getFullYear();
+              const month = date.getMonth();
+              if (!newResults.dates[year]) {
+                newResults.dates[year] = {};
+              }
+              let dateObj = newResults.dates[year][month];
+              if (!dateObj) {
+                newResults.dates[year][month] = { count: 0, from: 0, to: 0 };
+                dateObj = newResults.dates[year][month];
+              }
+              dateObj.count = dateObj.count + 1;
+
+              // all
               newResults.checkedCount = newResults.checkedCount + 1;
               if (message.out) {
-                newResults.toCount = newResults.toCount + 1;
+                newResults.all.to = newResults.all.to + 1;
+
+                // date
+                dateObj.to = dateObj.to + 1;
               } else {
-                newResults.fromCount = newResults.fromCount + 1;
+                newResults.all.from = newResults.all.from + 1;
+
+                //date
+                dateObj.from = dateObj.from + 1;
               }
+
+              // attachments
               if (message.attachments.length) {
                 message.attachments.forEach((attachment) => {
                   if (attachment.audio_message) {
-                    newResults.fullVoice =
-                      newResults.fullVoice + attachment.audio_message.duration;
+                    newResults.voice.count =
+                      newResults.voice.count +
+                      attachment.audio_message.duration;
                     if (message.out) {
-                      newResults.toVoice =
-                        newResults.toVoice + attachment.audio_message.duration;
+                      newResults.voice.to =
+                        newResults.voice.to + attachment.audio_message.duration;
                     } else {
-                      newResults.fromVoice =
-                        newResults.fromVoice +
+                      newResults.voice.from =
+                        newResults.voice.from +
                         attachment.audio_message.duration;
                     }
                   }

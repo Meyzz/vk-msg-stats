@@ -3,7 +3,7 @@ import { FormattedChat } from 'pages/Main/types';
 
 export const formatChats = (resp: GetChatsResponse): FormattedChat[] => {
   return resp.chats.items.map((item: Chat) => {
-    const { conversation } = item;
+    const conversation = item.conversation || item;
     const {
       peer: { type, id, local_id },
     } = conversation;
@@ -22,7 +22,7 @@ export const formatChats = (resp: GetChatsResponse): FormattedChat[] => {
 
     if (type === 'chat' && conversation.chat_settings) {
       title = conversation.chat_settings.title;
-      photo_50 = conversation.chat_settings.photo.photo_50;
+      photo_50 = conversation.chat_settings?.photo?.photo_50;
     }
 
     if (type === 'group') {
