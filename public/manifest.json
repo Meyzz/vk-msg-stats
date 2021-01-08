@@ -1,8 +1,8 @@
 {
-  "name": "Create React App Sample",
-  "description": "Pithy description (132 characters or less, no HTML)",
+  "name": "VK messages stats",
+  "description": "VK messages stats",
   "version": "0.0.1",
-  "content_security_policy": "script-src 'self' 'unsafe-eval' https://vk.com object-src 'self'",
+  "content_security_policy": "script-src 'self' https://vk.com; object-src 'self' https://vk.com",
   "manifest_version": 2,
   "browser_action": {},
   "permissions": [

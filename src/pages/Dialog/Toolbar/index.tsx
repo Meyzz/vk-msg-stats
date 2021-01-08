@@ -14,7 +14,7 @@ export const Toolbar: FC<ToolbarProps> = ({ onBackClick, profile }) => {
       <div className={style.title}>
         <Avatar circle src={profile?.photo_50} />
         <h3>
-          {profile?.first_name} {profile?.last_name} (Анализ диалога)
+          {profile?.first_name} {profile?.last_name}
         </h3>
       </div>
       <div>

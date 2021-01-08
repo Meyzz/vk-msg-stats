@@ -74,7 +74,7 @@ export const MainPage: FC = observer(() => {
           searchChatsList.fetch({
             code: searchChatsExecute({
               extended: 1,
-              count: 3,
+              count: 10,
               q: searchValue,
             }),
           });
