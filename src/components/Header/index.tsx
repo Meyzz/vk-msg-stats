@@ -12,7 +12,7 @@ export const Header: FC = observer(() => {
   return (
     <Navbar className={style.header}>
       <Navbar.Header className={style.logo}>
-        <h4>vk-msg-stats</h4>
+        <h4>ВК статистика сообщений</h4>
       </Navbar.Header>
       <div className={style.profile}>
         <Avatar
