@@ -8,7 +8,7 @@ import {
 } from 'stores/DialogStore/types';
 import { loadHistory } from 'stores/DialogStore/loadHistory';
 
-const LOAD_TIMES = 25;
+const LOAD_TIMES = 12;
 const LOAD_AT_ONCE = 200;
 
 const initialResults: AnalysisResults = {
@@ -60,6 +60,7 @@ export class DialogStore {
     needLoads: number
   ) => {
     if (this.analysisState === AnalysisState.ACTIVE) {
+      const lastReqTime = new Date().getTime();
       this.getMessagesHistory
         .fetch({
           code: loadHistory(
@@ -72,9 +73,11 @@ export class DialogStore {
           const loadAgain = loadedCount !== needLoads;
           this.loadPartHistorySuccess(resp);
           if (loadAgain) {
+            const timePassed = new Date().getTime() - lastReqTime;
+            const timeLeft = timePassed > 350 ? 0 : 350 - timePassed;
             setTimeout(() => {
               this.loadPartHistory(id, loadedCount + 1, needLoads);
-            }, 350);
+            }, timeLeft);
           } else {
             this.handleAnalysisDone();
           }

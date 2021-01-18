@@ -9,7 +9,7 @@
     "48": "48.png",
     "128": "128.png" },
   "permissions": [
-    "tabs", "*://api.vk.com/*", "unlimitedStorage"
+    "tabs", "*://api.vk.com/*"
   ],
   "background": {
     "scripts": [
