@@ -33,7 +33,7 @@ export const formatChats = (resp: GetChatsResponse): FormattedChat[] => {
       }
     }
 
-    const foundHistory = resp.histories.find(h => h.id === id);
+    const foundHistory = resp.histories.find((h) => h.id === id);
 
     if (foundHistory) {
       count = foundHistory.count;

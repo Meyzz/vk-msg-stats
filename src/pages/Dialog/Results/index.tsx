@@ -16,7 +16,7 @@ export const Results: FC<ResultsProps> = ({ data }) => {
         <AllResults data={data} />
         <VoiceResults data={data} />
       </FlexboxGrid>
-      <Chart data={data}/>
+      <Chart data={data} />
     </div>
   );
 };

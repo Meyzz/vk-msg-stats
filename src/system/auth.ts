@@ -22,7 +22,6 @@ export const auth = () => {
     const url = AUTH_BASE_LINK;
     const params = new URLSearchParams();
     Object.entries(options).forEach(([key, value]) => params.set(key, value));
-    debugger;
     chrome.tabs.getCurrent((activeTab) => {
       if (activeTab && activeTab.id) {
         chrome.tabs.create({ url: `${url}?${params}` }, (newTab) => {

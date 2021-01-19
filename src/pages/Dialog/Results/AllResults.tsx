@@ -10,14 +10,17 @@ interface AllResultsProps {
 }
 
 export const AllResults: FC<AllResultsProps> = ({ data }) => {
-  const {count, from, to} = data.all;
+  const { count, from, to } = data.all;
   const fromPercent = Math.round((from / count) * 100);
   const toPercent = Math.round((to / count) * 100);
   return (
     <FlexboxGrid.Item className={style.container} colspan={12}>
       <Panel
         header={
-          <PanelHeader disabled title={`Все сообщения (${formatNumber(count)})`} />
+          <PanelHeader
+            disabled
+            title={`Все сообщения (${formatNumber(count)})`}
+          />
         }
         bordered
         className={style.panel}

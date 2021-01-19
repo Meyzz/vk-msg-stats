@@ -90,7 +90,7 @@ export class VKRequest<T = any> {
       Notification.error({
         title: `Произошлка ошибка (${this.path})`,
         description: error.message,
-        placement: 'bottomEnd'
+        placement: 'bottomEnd',
       });
     }
   }

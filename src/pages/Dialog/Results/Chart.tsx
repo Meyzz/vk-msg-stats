@@ -38,7 +38,12 @@ export const Chart: FC<ChartProps> = ({ data }) => {
   const chartData = useMemo(() => {
     const yearData = data.dates[parseInt(selectedYear, 10)] || {};
     return months.map((month, index) => {
-      return [month, yearData[index]?.count || 0, yearData[index]?.from || 0, yearData[index]?.to || 0];
+      return [
+        month,
+        yearData[index]?.count || 0,
+        yearData[index]?.from || 0,
+        yearData[index]?.to || 0,
+      ];
     });
   }, [data.dates, selectedYear]);
 
@@ -69,8 +74,8 @@ export const Chart: FC<ChartProps> = ({ data }) => {
     >
       <LineChart data={chartData}>
         <Line name="Всего" />
-        <Line color="#4caf50" name="Отправлено" />
         <Line color="#f44336" name="Получено" />
+        <Line color="#4caf50" name="Отправлено" />
       </LineChart>
     </Panel>
   );

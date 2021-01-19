@@ -91,9 +91,7 @@ export const MainPage: FC = observer(() => {
     <Page>
       <FlexboxGrid align="middle" justify="space-between">
         <FlexboxGrid.Item>
-          <h3 className={style.title}>
-            Мои диалоги (Всего {count})
-          </h3>
+          <h3 className={style.title}>Мои диалоги (Всего {count})</h3>
         </FlexboxGrid.Item>
         <FlexboxGrid>
           <InputGroup>

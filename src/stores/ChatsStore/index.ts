@@ -1,9 +1,7 @@
 import { makeAutoObservable } from 'mobx';
 import { VKRequest } from 'classes/VKRequest';
 import { GetChatsResponse } from 'stores/ChatsStore/types';
-import {
-  loadChatsExecute,
-} from 'stores/ChatsStore/loadChats';
+import { loadChatsExecute } from 'stores/ChatsStore/loadChats';
 
 export class ChatsStore {
   constructor() {
@@ -30,5 +28,5 @@ export class ChatsStore {
 
   public setSearchValue = (value: string) => {
     this.searchValue = value;
-  }
+  };
 }

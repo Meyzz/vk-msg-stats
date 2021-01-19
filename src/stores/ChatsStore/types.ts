@@ -1,4 +1,4 @@
-import {ProfileInfo} from "stores/types";
+import { ProfileInfo } from 'stores/types';
 
 export interface GetChatsResponse {
   chats: {

@@ -14,6 +14,13 @@
   &::before, &::after {
     display: none !important;
   }
+
+  &Right {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 24px;
+    align-items: center;
+  }
 }
 
 .profile {

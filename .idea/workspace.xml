@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b9628193-1c05-4fca-8b78-08c28c83d425" name="Default Changelist" comment="" />
+    <list default="true" id="b9628193-1c05-4fca-8b78-08c28c83d425" name="Default Changelist" comment="обновил версию">
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/VKRequest.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/VKRequest.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useStores.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useStores.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Dialog/Results/AllResults.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Dialog/Results/AllResults.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Dialog/Results/Chart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Dialog/Results/Chart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Dialog/Results/PanelHeader/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Dialog/Results/PanelHeader/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Dialog/Results/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Dialog/Results/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Main/ChatsList/ChatItems.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Main/ChatsList/ChatItems.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Main/ChatsList/ChatsList.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Main/ChatsList/ChatsList.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Main/ChatsList/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Main/ChatsList/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Main/formatChats.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Main/formatChats.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Main/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Main/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stores/ChatsStore/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/stores/ChatsStore/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stores/ChatsStore/loadChats.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/stores/ChatsStore/loadChats.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stores/ChatsStore/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/stores/ChatsStore/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/auth.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/shards-dashboard-react" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1lsYzYHjZPCtC0WFrxystrwWKRK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -20,13 +42,22 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -39,8 +70,79 @@
       <option name="presentableId" value="Default" />
       <updated>1608387528989</updated>
       <workItem from="1608387530098" duration="2097000" />
-      <workItem from="1609013937401" duration="1528000" />
+      <workItem from="1609013937401" duration="8346000" />
+      <workItem from="1609245373742" duration="8724000" />
+      <workItem from="1609265105958" duration="2688000" />
+      <workItem from="1609314425581" duration="98000" />
+      <workItem from="1609327606962" duration="4886000" />
+      <workItem from="1609334044458" duration="40992000" />
+      <workItem from="1610972170599" duration="5487000" />
+      <workItem from="1610991233820" duration="694000" />
     </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <created>1609338058264</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1609338058264</updated>
+    </task>
+    <task id="LOCAL-00002" summary="initial commit">
+      <created>1609338184645</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609338184645</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added analysis module">
+      <created>1609864131171</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1609864131171</updated>
+    </task>
+    <task id="LOCAL-00004" summary="добавил анализ голосовых">
+      <created>1609872484795</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1609872484795</updated>
+    </task>
+    <task id="LOCAL-00005" summary="добавил графики">
+      <created>1609887282142</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1609887282142</updated>
+    </task>
+    <task id="LOCAL-00006" summary="v1.0">
+      <created>1610104112014</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1610104112014</updated>
+    </task>
+    <task id="LOCAL-00007" summary="добавил логотип">
+      <created>1610104690824</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1610104690824</updated>
+    </task>
+    <task id="LOCAL-00008" summary="пофиксил тяжелые диалоги">
+      <created>1610974453674</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1610974453674</updated>
+    </task>
+    <task id="LOCAL-00009" summary="обновил версию">
+      <created>1610974947712</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1610974947712</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -56,5 +158,21 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit" />
+    <MESSAGE value="added analysis module" />
+    <MESSAGE value="добавил анализ голосовых" />
+    <MESSAGE value="добавил графики" />
+    <MESSAGE value="v1.0" />
+    <MESSAGE value="добавил логотип" />
+    <MESSAGE value="пофиксил тяжелые диалоги" />
+    <MESSAGE value="обновил версию" />
+    <option name="LAST_COMMIT_MESSAGE" value="обновил версию" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

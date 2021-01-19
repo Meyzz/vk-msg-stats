@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import {Stores, storesContext} from 'stores';
+import { useContext } from 'react';
+import { Stores, storesContext } from 'stores';
 
 export const useStores = (): Stores => {
   const context = useContext(storesContext);

@@ -14,7 +14,7 @@ export const Chat: FC<ChatProps> = ({ chat, onClick }) => {
       Notification.error({
         title: 'Произошла ошибка',
         description: 'На текущий момент поддерживается только анализ диалогов',
-        placement: 'bottomEnd'
+        placement: 'bottomEnd',
       });
     } else {
       onClick(chat.id);
@@ -29,7 +29,7 @@ export const Chat: FC<ChatProps> = ({ chat, onClick }) => {
           <div>{chat.title}</div>
         </div>
         <div>
-          <Tag color="red">{chat.count}</Tag>
+          <Tag className={style.count} color="blue">{chat.count}</Tag>
         </div>
       </FlexboxGrid>
     </List.Item>

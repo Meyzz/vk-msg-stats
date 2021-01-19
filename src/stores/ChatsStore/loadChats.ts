@@ -16,7 +16,9 @@ export const loadChatsExecute = (options: object = {}) => `
 `;
 
 export const searchChatsExecute = (options: object = {}) => `
-    var foundChats = API.messages.searchConversations(${JSON.stringify(options)});
+    var foundChats = API.messages.searchConversations(${JSON.stringify(
+      options
+    )});
     
     var index = 0;
     
